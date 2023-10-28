@@ -6,7 +6,7 @@
 # Appearance
 
 appearance:
-  theme_day: custom
+  theme_day: default
   theme_night:
   font: minimal
   font_size: L
@@ -15,11 +15,11 @@ appearance:
 
 marketing:
   seo:
-    site_type: Organization
+    site_type: ''
     local_business_type: ''
     org_name: ''
-    description: 'A highly-customizable Hugo learning theme powered by Wowchemy website builder.'
-    twitter: 'wowchemy'
+    description: 'A chect-sheet for technical interviews in IT'
+    twitter: ''
   analytics:
     google_analytics: ''
     baidu_tongji: ''
@@ -45,11 +45,11 @@ header:
 
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: '© {year} Me'
     license:
-      enable: true
+      enable: false
       allow_derivatives: false
-      share_alike: true
+      share_alike: false
       allow_commercial: false
 
 # Localization
@@ -69,9 +69,9 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/wowchemy/starter-hugo-online-course'
-    content_dir: content
-    branch: main
+    url: ''
+    content_dir:
+    branch:
   comment:
     provider: ''
     disqus:
@@ -86,11 +86,11 @@ features:
       category_id: ''
   search:
     provider: wowchemy
-    algolia:
-      app_id: ''
-      api_key: ''
-      index_name: ''
-      show_logo: false
+    # algolia:
+    #   app_id: ''
+    #   api_key: ''
+    #   index_name: ''
+    #   show_logo: false
 
 extensions:
   cms:
