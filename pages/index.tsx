@@ -24,7 +24,7 @@ export default function Index({ allDocs }: Props) {
         </Head>
         <Container>
           <Intro />
-          <Card redirectToPath='/docs' />
+          <Card redirectToPath='/docs/intro' />
         </Container>
       </Layout>
     </>
