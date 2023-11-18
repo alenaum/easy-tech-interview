@@ -7,33 +7,24 @@ import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import Post from '../interfaces/post'
+import { getAllDocs } from '../lib/markdownService'
+import DocViewModel from '../interfaces/docViewModel'
+import Card from '../components/card'
 
 type Props = {
-  allPosts: Post[]
+  allDocs: DocViewModel[]
 }
 
-export default function Index({ allPosts }: Props) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+export default function Index({ allDocs }: Props) {
   return (
     <>
       <Layout>
         <Head>
-          <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+          <title>Easy Tech Interview</title>
         </Head>
         <Container>
           <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          <Card redirectToPath='/docs/intro' />
         </Container>
       </Layout>
     </>
@@ -41,16 +32,9 @@ export default function Index({ allPosts }: Props) {
 }
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ])
-
+  const allDocs = await getAllDocs();
   return {
-    props: { allPosts },
+    props: { allDocs },
   }
 }
+
