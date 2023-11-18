@@ -25,6 +25,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
       - uses: actions/checkout@v4
 
       - name: Install Node.js
@@ -57,10 +58,10 @@ jobs:
         run: npm ci
 
       - name: Build with Next.js
-        run: npm next build
+        run: npm run build
 
       - name: Static HTML export with Next.js
-        run: npm next export
+        run: npm run export
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
