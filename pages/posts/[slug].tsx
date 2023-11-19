@@ -20,7 +20,7 @@ type Props = {
 
 export default function Post({ post, morePosts, preview }: Props) {
   const router = useRouter();
-  const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`
+  const title = "Easy Tech Interview"
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
