@@ -1,6 +1,7 @@
 import Alert from './alert'
 import Footer from './footer'
-import Meta from './meta'
+import Navbar from './navbar'
+import Meta from '../meta'
 
 type Props = {
   preview?: boolean
@@ -8,11 +9,13 @@ type Props = {
 }
 
 const Layout = ({ preview, children }: Props) => {
+  const alerttext = "🚧 The website is under active construction 🚧";
   return (
     <>
       <Meta />
       <div className="min-h-screen">
-        <Alert preview={preview} />
+        <Alert text={alerttext} />
+        <Navbar />
         <main>{children}</main>
       </div>
       <Footer />
